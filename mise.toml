@@ -1,0 +1,9 @@
+[tools]
+node = "lts"
+prek = "latest"
+python = "3.13"
+uv = "latest"
+
+[env]
+UV_PYTHON_PREFERENCE = "only-managed"
+_.python.venv = { path = ".venv", create = false }

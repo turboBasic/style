@@ -1,0 +1,14 @@
+addopts
+prek
+testpaths
+webp
+botan
+pidor
+
+# Ukrainian dictionary
+ботанський
+ботанським
+підорсько
+підорським
+підорський
+скіллом

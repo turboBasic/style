@@ -1,0 +1,24 @@
+# Python environments and artifacts
+.venv/
+__pycache__/
+*.py[cod]
+*.egg-info/
+
+# Tooling caches
+.pytest_cache/
+.ruff_cache/
+.pyright/
+
+# Build outputs
+dist/
+build/
+
+# Local configuration and operating system files
+.env
+.DS_Store
+
+# Temporary files
+tmp/
+
+# Node tooling (spell-check dictionaries)
+node_modules/

@@ -1,0 +1,8 @@
+{
+  "name": "style-tooling",
+  "private": true,
+  "description": "Spell-check dictionaries for the editor; the project itself is Python",
+  "devDependencies": {
+    "@cspell/dict-uk-ua": "^4.0.6"
+  }
+}
