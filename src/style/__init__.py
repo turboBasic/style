@@ -1,0 +1,1 @@
+"""Style command-line application."""

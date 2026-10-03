@@ -1,4 +1,7 @@
 addopts
+docstrings
+lanczos
+osxphotos
 prek
 testpaths
 webp

@@ -4,13 +4,25 @@ version = "0.1.0"
 description = ""
 readme = "README.md"
 requires-python = ">=3.13"
-dependencies = []
+dependencies = [
+    "osxphotos>=0.77",
+    "pillow>=12.3.0",
+    "pydantic>=2.10",
+    "typer>=0.15",
+]
+
+[project.scripts]
+style = "style.main:app"
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [dependency-groups]
 dev = ["pyright>=1.1.380", "pytest>=8.3", "ruff>=0.8"]
 
 [tool.uv]
-package = false
+package = true
 
 [tool.ruff]
 line-length = 100
@@ -18,7 +30,7 @@ target-version = "py313"
 src = ["src", "tests"]
 
 [tool.ruff.lint]
-select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF", "C4", "PT"]
+select = ["E", "F", "W", "I", "B", "UP", "SIM", "RUF", "C4", "PT", "PGH"]
 
 [tool.ruff.format]
 docstring-code-format = true
