@@ -45,7 +45,7 @@ class OsxPhotos(Protocol):
     def PhotosDB(self) -> PhotosDB: ...
 
 
-osxphotos = cast(OsxPhotos, import_module("osxphotos"))
+osxphotos: OsxPhotos | None = None
 
 
 def resize_photo_to_jpeg(
@@ -87,8 +87,9 @@ class OsxPhotosPhotoLibrary:
     def export_by_original_filename(self, original_filename: str, destination: Path) -> int:
         destination = destination.expanduser()
         destination.mkdir(parents=True, exist_ok=True)
+        photos = osxphotos or cast(OsxPhotos, import_module("osxphotos"))
 
-        options = osxphotos.ExportOptions(
+        options = photos.ExportOptions(
             download_missing=True,
             update=True,
             convert_to_jpeg=True,
@@ -96,7 +97,7 @@ class OsxPhotosPhotoLibrary:
         )
         matches = [
             photo
-            for photo in osxphotos.PhotosDB().photos()
+            for photo in photos.PhotosDB().photos()
             if photo.original_filename == original_filename
         ]
 
@@ -105,7 +106,7 @@ class OsxPhotosPhotoLibrary:
             base_name = Path(photo.original_filename).stem
             before_exports = sorted(destination.glob(f"{base_name}*.jpeg"))
 
-            osxphotos.PhotoExporter(photo).export(
+            photos.PhotoExporter(photo).export(
                 destination,
                 filename=Path(photo.original_filename).with_suffix(".jpeg").name,
                 options=options,

@@ -5,6 +5,7 @@ description = ""
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
+    "httpx>=0.28.1",
     "osxphotos>=0.77",
     "pillow>=12.3.0",
     "pydantic>=2.10",
