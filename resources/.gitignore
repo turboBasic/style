@@ -1,0 +1,13 @@
+# User portraits
+faces/*.jpg
+faces/*.jpeg
+faces/*.png
+faces/*.webp
+faces/*.heic
+
+# Generated files
+try-ons/*.jpg
+try-ons/*.jpeg
+try-ons/*.png
+try-ons/*.webp
+try-ons/*.heic
