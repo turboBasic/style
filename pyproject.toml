@@ -7,7 +7,7 @@ requires-python = ">=3.13"
 dependencies = [
     "httpx>=0.28.1",
     "osxphotos>=0.77",
-    "pillow>=12.3.0",
+    "pillow>=13.0.0",
     "pydantic>=2.10",
     "typer>=0.15",
 ]
